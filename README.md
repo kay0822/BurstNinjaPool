@@ -31,7 +31,7 @@ chown -R burst:burst /home/burst
 
 BEFORE creating pool database, the server config needs to be changed.
 
-/etc/my.cnf.d/burstpool.cnf (or equivalent mysql/mariadb server config file):
+```/etc/my.cnf.d/burstpool.cnf (or equivalent mysql/mariadb server config file):
 [server]
 character-set-server=utf8
 collation-server=utf8_unicode_ci
@@ -39,6 +39,7 @@ init-connect="SET NAMES utf8"
 wait-timeout=600
 max-connections=400
 skip-networking="ON"
+```
 
 If using /etc/my.cnf.d then check for this in /etc/my.cnf:
 !includedir /etc/my.cnf.d
