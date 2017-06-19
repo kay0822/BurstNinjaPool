@@ -1,0 +1,27 @@
+Base name: Share
+Class name: Share
+Table name: Shares
+Stanza: blockID						bigint unsigned not null
+Column: blockID, matches SQL: bigint unsigned, so CXXTYPE: uint64_t, CONNTYPE: UInt64, NOT_NULL
+Navigator to Block (#include Block.hpp) via block()
+Stanza: accountID					bigint unsigned not null
+Column: accountID, matches SQL: bigint unsigned, so CXXTYPE: uint64_t, CONNTYPE: UInt64, NOT_NULL
+Navigator to Account (#include Account.hpp) via account()
+Stanza: share_fraction				double not null
+Column: share_fraction, matches SQL: double, so CXXTYPE: double, CONNTYPE: Double, NOT_NULL
+Stanza: deadline					int unsigned not null
+Column: deadline, matches SQL: int unsigned, so CXXTYPE: uint32_t, CONNTYPE: UInt, NOT_NULL
+Stanza: deadline_string				varchar(255) not null
+Column: deadline_string, matches SQL: varchar, so CXXTYPE: std::string, CONNTYPE: String, NOT_NULL
+Stanza: miner						varchar(255)
+Column: miner, matches SQL: varchar, so CXXTYPE: std::string, CONNTYPE: String
+Stanza: primary key					(blockID, accountID)
+Found PRIMARY KEY stanza, columns (2): blockID, accountID
+Stanza: index						(blockID, share_fraction)
+Found INDEX stanza, columns (2): blockID, share_fraction
+Writing template ../build/contrib/DORM/templates/object_.hxx to /tmp/DORM-heAJRC.cpp
+Compiling template /tmp/DORM-heAJRC.cpp to create /tmp/DORM-heAJRC.aout
+Using template /tmp/DORM-heAJRC.aout to create ../output/objects/Share_.hxx
+Writing template ../build/contrib/DORM/templates/object_.cxx to /tmp/DORM-3xru2i.cpp
+Compiling template /tmp/DORM-3xru2i.cpp to create /tmp/DORM-3xru2i.aout
+Using template /tmp/DORM-3xru2i.aout to create ../output/objects/Share_.cxx
